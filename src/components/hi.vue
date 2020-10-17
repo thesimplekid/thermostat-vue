@@ -2,12 +2,12 @@
   <h1>{{ idk }}</h1>
   <h3>{{ tester }}</h3>
   <h1>{{ wtf }}</h1>
+  <h3>{{ other }}</h3>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import axios from "axios";
-//import { getHello } from "@/api/apibase";
 
 @Options({
   props: {
@@ -17,27 +17,29 @@ import axios from "axios";
 export default class Hi extends Vue {
   idk!: string;
   tester = process.env.VUE_APP_ROOT_API;
-  private wtf = null;
+  private wtf = "";
+  private other = "";
+  private homeZoneInfo = {};
   http = axios.create({
     baseURL: process.env.VUE_APP_ROOT_API,
     headers: { "Content-Type": "application/json" }
   });
 
   getHello() {
-    this.http.get("/").then(response => {
-      this.wtf = response.data;
-      console.log(response.data);
+    this.http.get("/temperatures").then(response => {
+      this.wtf = response.data.hi;
+    });
+  }
+
+  getHomeInfo() {
+    this.http.get("/temperatures/home").then(response => {
+      this.homeZoneInfo = response.data;
     });
   }
 
   mounted() {
-    this.getHello();
-    /*
-    const wtf = getHello();
-    wtf.then{
-      console.log('hi')
-    }
-    */
+    //this.getHello();
+    this.getHomeInfo();
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <h1>{{ zoneInfo.zone_name }}</h1>
-    <h2>{{ zoneInfo.zone_number }}</h2>
+    <h2>Zone Number: {{ zoneInfo.zone_number }}</h2>
   </div>
   <div class="row">
     <div class="column">

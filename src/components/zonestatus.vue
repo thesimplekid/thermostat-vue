@@ -12,14 +12,36 @@
       <div class="column">
         <div class="row">
           <h1>Set Temp</h1>
-          <h1>{{ zoneInfo.set_temp }}</h1>
         </div>
         <div class="row">
           <div class="column">
-            <p>set low: {{ zoneInfo.low_set }}</p>
+            <h1>{{ zoneInfo.set_temp }}</h1>
           </div>
           <div class="column">
-            <p>set high: {{ zoneInfo.high_set }}</p>
+            <button>Click me</button><br />
+            <button>Click me too</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <div class="column">
+              <p>set low: {{ zoneInfo.low_set }}</p>
+            </div>
+            <div class="column">
+              <button>Click me</button><br />
+              <button>Click me too</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="column">
+              <p>set high: {{ zoneInfo.high_set }}</p>
+            </div>
+            <div class="column">
+              <button>Click me</button><br />
+              <button>Click me too</button>
+            </div>
           </div>
         </div>
       </div>

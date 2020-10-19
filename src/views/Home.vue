@@ -1,6 +1,6 @@
 <template>
   <div class="home"></div>
-  <ul>
+  <ul id="homeZoneList">
     <li v-for="(zoneInfo, index) in allZoneInfo" :key="index">
       <Zonestatus :zoneInfo="zoneInfo" />
     </li>
@@ -34,3 +34,9 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style>
+#homeZoneList li {
+  list-style-type: none;
+}
+</style>

@@ -11,7 +11,6 @@
 import { Options, Vue } from "vue-class-component";
 import Zonestatus from "@/components/zonestatus.vue";
 import axios from "axios";
-
 @Options({
   props: {},
   components: {
